@@ -1,0 +1,13 @@
+dat = read.table(file="WeekInt.txt",header=T)
+attach(dat)
+cm10_dif = diff( cm10 )
+aaa_dif = diff( aaa )
+cm30_dif = diff( cm30 )
+ff_dif = diff( ff )
+par(mfrow=c(1,1))
+pdf("cm10aaa.pdf",width=6,height=5)
+plot(cm10_dif,aaa_dif,xlab="change in 10YR T rate",
+     ylab="change in AAA rate")
+graphics.off()
+options(digits = 3)
+summary(lm(aaa_dif ~ cm10_dif))
