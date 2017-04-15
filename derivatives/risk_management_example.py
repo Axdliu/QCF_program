@@ -5,4 +5,6 @@ gamma and delta hedge
 @author: User
 """
 
-import QuantLib
+import QuantLib as ql
+import pyodbc
+import RPy2
